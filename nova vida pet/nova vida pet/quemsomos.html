@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quem Somos - Nova Vida Pet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilo.css">
+
+  <style>
+    .quemsomos-section {
+      padding: 80px 5% 100px;
+      text-align: center;
+    }
+
+    .quemsomos-section h1 {
+      font-family: 'Fredoka', cursive;
+      font-size: 56px;
+      color: #1E4727;
+      margin-bottom: 70px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      gap: 60px 160px;
+      margin: 0 auto;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    /* wrapper para as ondas */
+    .member-img-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .member-img-wrapper::before,
+    .member-img-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(246, 179, 71, 0.35);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .member-img-wrapper:hover::before {
+      animation: onda 1.6s ease-out infinite;
+    }
+
+    .member-img-wrapper:hover::after {
+      animation: onda 1.6s ease-out 0.55s infinite;
+    }
+
+    @keyframes onda {
+      0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.6; }
+      100% { transform: translate(-50%, -50%) scale(1.65); opacity: 0;   }
+    }
+
+    .team-member img {
+      position: relative;
+      z-index: 1;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member-img-wrapper:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .team-member h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #1E4727;
+      margin: 0;
+    }
+
+    .team-member p {
+      font-family: 'Nunito', sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #555;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .quemsomos-section {
+        padding: 40px 5% 60px;
+      }
+
+      .quemsomos-section h1 {
+        font-size: 32px;
+        margin-bottom: 40px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .team-member img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .member-img-wrapper::before,
+      .member-img-wrapper::after {
+        width: 160px;
+        height: 160px;
+      }
+
+      .team-member h2 {
+        font-size: 22px;
+      }
+
+      .team-member p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="logo-area">
+      <a href="index.html"><img src="imagens/Logo nova vida pet deitada.png" alt="Logo Nova Vida Pet" class="logo"></a>
+    </div>
+
+    <nav class="menu">
+      <a href="adocao.html">Adoção</a>
+      <a href="doação.html">Doação</a>
+      <a href="apadrinhar.html">Apadrinhar</a>
+      <a href="#">Parceiros</a>
+      <a href="quemsomos.html">Quem somos</a>
+    </nav>
+
+    <div class="header-btns">
+      <button class="btn-login">Entrar</button>
+      <button class="btn-cadastro">Cadastre-se</button>
+    </div>
+
+  </header>
+
+  <!-- CONTEÚDO -->
+  <section class="quemsomos-section">
+
+    <h1>Quem somos</h1>
+
+    <div class="team-grid">
+
+      <div class="team-member">
+        <div class="member-img-wrapper">
+          <img src="imagens/brenda.jpeg" alt="Brenda Fiorentino">
+        </div>
+        <h2>Brenda Fiorentino</h2>
+        <p>Desenvolvedora</p>
+      </div>
+
+      <div class="team-member">
+        <div class="member-img-wrapper">
+          <img src="imagens/manu.jpeg" alt="Manuela Micheloti" style="object-position: center 25%;">
+        </div>
+        <h2>Manuela Micheloti</h2>
+        <p>Desenvolvedora</p>
+      </div>
+
+      <div class="team-member">
+        <div class="member-img-wrapper">
+          <img src="imagens/sassa.jpeg" alt="Samantha Brown">
+        </div>
+        <h2>Samantha Brown</h2>
+        <p>Desenvolvedora</p>
+      </div>
+
+      <div class="team-member">
+        <div class="member-img-wrapper">
+          <img src="imagens/victoria.jpeg" alt="Victoria Nonis">
+        </div>
+        <h2>Victoria Nonis</h2>
+        <p>Desenvolvedora</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <img src="imagens/Logo nova vida pet.png" alt="Logo">
+    </div>
+
+    <div class="socials">
+
+      <div class="social">
+        <img src="imagens/Instagram.png" alt="Instagram">
+      </div>
+
+      <div class="social">
+        <img src="imagens/Vector face.png" alt="Facebook">
+      </div>
+
+    </div>
+
+    <div class="footer-menu">
+
+      <h3>Menu</h3>
+
+      <div class="footer-links">
+
+        <div>
+          <a href="adocao.html">Adoção</a>
+          <a href="doação.html">Doação</a>
+          <a href="apadrinhar.html">Apadrinhar</a>
+        </div>
+
+        <div>
+          <a href="#">Voluntariar-se</a>
+          <a href="#">Parceiros</a>
+          <a href="quemsomos.html">Quem somos</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
