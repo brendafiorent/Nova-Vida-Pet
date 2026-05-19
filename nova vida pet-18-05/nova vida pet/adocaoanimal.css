@@ -296,6 +296,7 @@
 
   .detalhe-card {
     flex-direction: column;
+    height: auto;
   }
 
   .detalhe-foto {
