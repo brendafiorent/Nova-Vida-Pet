@@ -1,0 +1,387 @@
+@import url('estilo.css');
+
+/* ── HEADER DEGRADÊ ── */
+.header {
+  background: linear-gradient(to right, #F6B347, #9dd89f);
+}
+
+/* ── MAIN ── */
+.doacao-main {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 5% 110px;
+}
+
+/* ── BLOBS DE FUNDO ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-laranja {
+  width: 500px;
+  height: 500px;
+  background: rgba(246, 179, 71, 0.32);
+  top: -130px;
+  right: -100px;
+}
+
+.blob-verde {
+  width: 420px;
+  height: 420px;
+  background: rgba(157, 216, 159, 0.32);
+  bottom: -90px;
+  left: -90px;
+}
+
+.blob-rosa {
+  width: 320px;
+  height: 320px;
+  background: rgba(240, 98, 146, 0.18);
+  top: 38%;
+  left: 32%;
+}
+
+/* ── PATAS DECORATIVAS ── */
+.pata {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  color: #1e4727;
+  opacity: 0.055;
+}
+
+.pata-1 { width: 95px;  top: 6%;   left: 1.5%;  transform: rotate(-25deg); }
+.pata-2 { width: 65px;  top: 22%;  right: 2.5%; transform: rotate(18deg);  }
+.pata-3 { width: 115px; bottom: 14%; left: 6%;   transform: rotate(-38deg); }
+.pata-4 { width: 55px;  top: 56%;  right: 10%;  transform: rotate(32deg);  }
+.pata-5 { width: 78px;  bottom: 7%; right: 4%;  transform: rotate(-12deg); }
+.pata-6 { width: 50px;  top: 72%;  left: 42%;   transform: rotate(22deg);  }
+
+/* ── PONTINHOS DECORATIVOS ── */
+.ponto {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.ponto-1 { width: 14px; height: 14px; background: #F6B347; top: 12%;  left: 28%; }
+.ponto-2 { width: 10px; height: 10px; background: #f06292; top: 28%;  right: 22%; }
+.ponto-3 { width: 18px; height: 18px; background: #9dd89f; bottom: 22%; left: 22%; }
+.ponto-4 { width: 12px; height: 12px; background: #F6B347; bottom: 18%; right: 16%; }
+.ponto-5 { width:  8px; height:  8px; background: #f06292; top: 65%;  left: 55%; }
+
+/* ── GRID PRINCIPAL ── */
+.doacao-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   COLUNA ESQUERDA — FOTOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.fotos-col {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+}
+
+.foto-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.14);
+  flex: 1;
+  min-width: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+}
+
+.foto-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.foto-label {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #222;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 8px 30px;
+  border-radius: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+  white-space: nowrap;
+}
+
+.label-antes {
+  border-left: 4px solid #f06292;
+}
+
+.label-depois {
+  border-left: 4px solid #4caf50;
+}
+
+/* ── CONECTOR ENTRE AS FOTOS ── */
+.transformacao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 0 4px;
+  gap: 5px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.transformacao-linha {
+  width: 22px;
+  height: 2px;
+  background: linear-gradient(to right, #f06292, #4caf50);
+  border-radius: 2px;
+}
+
+.transformacao-pata {
+  width: 32px;
+  height: 32px;
+  color: #1e4727;
+  opacity: 0.6;
+  animation: pulsar 2s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1);    opacity: 0.6; }
+  50%       { transform: scale(1.22); opacity: 0.9; }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   COLUNA DIREITA — CONTEÚDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.conteudo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ── BADGE ── */
+.badge-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(246, 179, 71, 0.16);
+  border: 1.5px solid rgba(246, 179, 71, 0.55);
+  border-radius: 30px;
+  padding: 9px 22px;
+  margin-bottom: 26px;
+}
+
+.badge-topo svg {
+  width: 19px;
+  height: 19px;
+  color: #F6B347;
+  flex-shrink: 0;
+}
+
+.badge-topo span {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1e4727;
+}
+
+/* ── FRASE ── */
+.doacao-frase {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: #1e4727;
+  line-height: 1.48;
+  margin-bottom: 36px;
+}
+
+/* ── LABEL VALORES ── */
+.valores-titulo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+
+/* ── CARDS DE VALOR ── */
+.valores-grid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.valor-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 38px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Fredoka', cursive;
+  font-size: 50px;
+  font-weight: 700;
+  color: #1e4727;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2.5px solid transparent;
+}
+
+.valor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(246, 179, 71, 0.32);
+  border-color: #F6B347;
+}
+
+.valor-card.ativo {
+  background: #1e4727;
+  color: white;
+  border-color: #1e4727;
+  box-shadow: 0 8px 24px rgba(30, 71, 39, 0.3);
+}
+
+.valor-card .cents {
+  font-size: 28px;
+}
+
+/* ── BOTÃO ── */
+.btn-doar-outros {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #F6B347;
+  color: #1e4727;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 56px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(246, 179, 71, 0.42);
+  margin-bottom: 18px;
+}
+
+.btn-doar-outros:hover {
+  background: #e8a030;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(246, 179, 71, 0.55);
+}
+
+.btn-doar-outros svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* ── GRUPO BOTÃO + SEGURANÇA ── */
+.botao-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* ── RODAPÉ DO BOTÃO ── */
+.seguro-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #888;
+  font-weight: 600;
+}
+
+.seguro-info svg {
+  width: 15px;
+  height: 15px;
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+/* ── FOOTER VERDE ── */
+.footer-verde {
+  background: #9dd89f;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 920px) {
+  .doacao-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .fotos-col {
+    gap: 0;
+  }
+
+  .conteudo-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .valores-grid {
+    justify-content: center;
+  }
+
+  .botao-grupo {
+    align-self: center;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .doacao-main {
+    padding: 44px 4% 64px;
+  }
+
+  .fotos-col {
+    flex-direction: column;
+  }
+
+  .doacao-frase {
+    font-size: 22px;
+  }
+
+  .valor-card {
+    font-size: 36px;
+    padding: 16px 28px;
+  }
+
+  .valor-card .cents {
+    font-size: 20px;
+  }
+
+  .btn-doar-outros {
+    font-size: 18px;
+    padding: 16px 38px;
+  }
+}
