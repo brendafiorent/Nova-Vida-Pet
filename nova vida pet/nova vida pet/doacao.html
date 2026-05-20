@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="doacao.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="page-doacao">
 
   <!-- HEADER -->
   <header class="header">
@@ -20,7 +20,7 @@
     </div>
     <nav class="menu">
       <a href="adocao.html">Adoção</a>
-      <a href="doação.html">Doação</a>
+      <a href="doacao.html">Doação</a>
       <a href="apadrinhar.html">Apadrinhar</a>
       <a href="#">Parceiros</a>
       <a href="quemsomos.html">Quem somos</a>
@@ -154,7 +154,7 @@
       <div class="footer-links">
         <div>
           <a href="adocao.html">Adoção</a>
-          <a href="doação.html">Doação</a>
+          <a href="doacao.html">Doação</a>
           <a href="#">Apadrinhar</a>
         </div>
         <div>
@@ -166,14 +166,7 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('.valor-card').forEach(card => {
-      card.addEventListener('click', () => {
-        document.querySelectorAll('.valor-card').forEach(c => c.classList.remove('ativo'));
-        card.classList.add('ativo');
-      });
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>

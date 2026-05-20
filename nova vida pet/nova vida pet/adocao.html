@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="adocao.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="page-adocao">
 
   <!-- HEADER -->
   <header class="header">
@@ -22,7 +22,7 @@
 
     <nav class="menu">
       <a href="adocao.html">Adoção</a>
-      <a href="doação.html">Doação</a>
+      <a href="doacao.html">Doação</a>
       <a href="apadrinhar.html">Apadrinhar</a>
       <a href="#">Parceiros</a>
       <a href="quemsomos.html">Quem somos</a>
@@ -238,7 +238,7 @@
       <div class="footer-links">
         <div>
           <a href="adocao.html">Adoção</a>
-          <a href="doação.html">Doação</a>
+          <a href="doacao.html">Doação</a>
           <a href="#">Apadrinhar</a>
         </div>
         <div>
@@ -250,33 +250,7 @@
     </div>
   </footer>
 
-  <script>
-    // Toggle tags de filtro
-    document.querySelectorAll('.tag').forEach(tag => {
-      tag.addEventListener('click', () => tag.classList.toggle('ativo'));
-    });
-
-    // Botão Limpar
-    document.querySelector('.btn-limpar').addEventListener('click', () => {
-      document.querySelectorAll('.tag').forEach(t => t.classList.remove('ativo'));
-      document.querySelectorAll('.checkboxes input').forEach(cb => cb.checked = false);
-    });
-
-    // Favoritar
-    document.querySelectorAll('.btn-favoritar').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('favoritado');
-        btn.textContent = btn.classList.contains('favoritado') ? '♥' : '♡';
-      });
-    });
-
-    // Navegar para página de detalhe ao clicar em "Quero adotar!"
-    document.querySelectorAll('.animal-card').forEach(card => {
-      card.querySelector('.btn-adotar').addEventListener('click', () => {
-        window.location.href = 'adocaoanimal.html?id=' + card.dataset.id;
-      });
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>
