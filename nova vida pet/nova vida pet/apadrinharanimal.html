@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quem Somos - Nova Vida Pet</title>
+  <title>Apadrinhar Animal - Nova Vida Pet</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,13 @@
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
-
-<body class="page-quemsomos">
+<body class="page-apadrinharanimal">
 
   <!-- HEADER -->
   <header class="header">
-
     <div class="logo-area">
       <a href="index.html"><img src="imagens/Logo nova vida pet deitada.png" alt="Logo Nova Vida Pet" class="logo"></a>
     </div>
-
     <nav class="menu">
       <a href="adocao.html">Adoção</a>
       <a href="doacao.html">Doação</a>
@@ -29,99 +26,85 @@
       <a href="parceiros.html">Parceiros</a>
       <a href="quemsomos.html">Quem somos</a>
     </nav>
-
     <div class="header-btns">
       <button class="btn-login">Entrar</button>
       <button class="btn-cadastro">Cadastre-se</button>
     </div>
-
   </header>
 
-  <!-- CONTEÚDO -->
-  <section class="quemsomos-section">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="animal-page">
 
-    <h1>Quem somos</h1>
+    <!-- DETALHE DO ANIMAL -->
+    <div class="detalhe-wrapper">
+      <div class="detalhe-card">
 
-    <div class="team-grid">
-
-      <div class="team-member">
-        <div class="member-img-wrapper">
-          <img src="imagens/brenda.jpeg" alt="Brenda Fiorentino">
+        <!-- Foto -->
+        <div class="detalhe-foto">
+          <img id="foto-principal" src="" alt="">
         </div>
-        <h2>Brenda Fiorentino</h2>
-        <p>Desenvolvedora</p>
-      </div>
 
-      <div class="team-member">
-        <div class="member-img-wrapper">
-          <img src="imagens/manu.jpeg" alt="Manuela Micheloti" style="object-position: center 25%;">
+        <!-- Informações -->
+        <div class="detalhe-info">
+          <a href="apadrinhar.html" class="btn-fechar" aria-label="Voltar">✕</a>
+
+          <h1 id="animal-nome" class="detalhe-nome"></h1>
+
+          <div id="animal-tags" class="detalhe-tags"></div>
+
+          <div class="conheca-bloco">
+            <h3 class="conheca-titulo">Me conheça</h3>
+            <p id="animal-descricao" class="conheca-texto"></p>
+          </div>
+
+          <div class="detalhe-acoes">
+            <button class="btn-favoritar-detalhe" id="btn-favoritar" aria-label="Favoritar">♡</button>
+            <button class="btn-adotar-detalhe">Apadrinhar!</button>
+          </div>
         </div>
-        <h2>Manuela Micheloti</h2>
-        <p>Desenvolvedora</p>
-      </div>
 
-      <div class="team-member">
-        <div class="member-img-wrapper">
-          <img src="imagens/sassa.jpeg" alt="Samantha Brown">
-        </div>
-        <h2>Samantha Brown</h2>
-        <p>Desenvolvedora</p>
       </div>
-
-      <div class="team-member">
-        <div class="member-img-wrapper">
-          <img src="imagens/victoria.jpeg" alt="Victoria Nonis">
-        </div>
-        <h2>Victoria Nonis</h2>
-        <p>Desenvolvedora</p>
-      </div>
-
     </div>
 
-  </section>
+    <!-- VEJA TAMBÉM -->
+    <section class="veja-tambem">
+      <h2 class="veja-titulo">Veja também</h2>
+      <div class="veja-grid" id="veja-grid"></div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-
+  <footer class="footer footer-rosa">
     <div class="footer-logo">
-      <img src="imagens/Logo nova vida pet.png" alt="Logo">
+      <img src="imagens/Logo nova vida pet deitada.png" alt="Logo Nova Vida Pet">
     </div>
-
     <div class="socials">
-
       <div class="social">
         <img src="imagens/Instagram.png" alt="Instagram">
       </div>
-
       <div class="social">
         <img src="imagens/Vector face.png" alt="Facebook">
       </div>
-
     </div>
-
     <div class="footer-menu">
-
       <h3>Menu</h3>
-
       <div class="footer-links">
-
         <div>
           <a href="adocao.html">Adoção</a>
           <a href="doacao.html">Doação</a>
           <a href="apadrinhar.html">Apadrinhar</a>
         </div>
-
         <div>
           <a href="#">Voluntariar-se</a>
           <a href="parceiros.html">Parceiros</a>
           <a href="quemsomos.html">Quem somos</a>
         </div>
-
       </div>
-
     </div>
-
   </footer>
+
+  <script src="js/main.js" defer></script>
 
 </body>
 </html>

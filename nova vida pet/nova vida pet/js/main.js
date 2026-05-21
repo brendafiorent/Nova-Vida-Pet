@@ -73,6 +73,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ─────────────────────────────────────────────────────
+     HELPERS DE FAVORITOS (localStorage)
+  ───────────────────────────────────────────────────── */
+
+  function getFavoritos() {
+    try { return JSON.parse(localStorage.getItem('nvp_favoritos') || '[]'); }
+    catch (e) { return []; }
+  }
+
+  function setFavoritos(lista) {
+    localStorage.setItem('nvp_favoritos', JSON.stringify(lista));
+  }
+
+  /* ─────────────────────────────────────────────────────
      FILTROS & ANIMAIS (adocao.html / apadrinhar.html)
   ───────────────────────────────────────────────────── */
 
@@ -80,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnLimpar   = document.querySelector('.btn-limpar');
 
   if (animaisGrid && btnLimpar) {
+    const isApadrinhar = document.body.classList.contains('page-apadrinhar');
+    const tipoAtual    = isApadrinhar ? 'apadrinhar' : 'adocao';
+
     // Toggle tags de filtro
     document.querySelectorAll('.tag').forEach(tag => {
       tag.addEventListener('click', () => tag.classList.toggle('ativo'));
@@ -91,17 +107,50 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.checkboxes input').forEach(cb => cb.checked = false);
     });
 
-    // Favoritar
+    // Restaurar estado de favoritos salvo
+    const favSalvos = getFavoritos();
+    document.querySelectorAll('.animal-card').forEach(card => {
+      const chave = tipoAtual + '_' + card.dataset.id;
+      if (favSalvos.find(f => f.chave === chave)) {
+        const btn = card.querySelector('.btn-favoritar');
+        btn.classList.add('favoritado');
+        btn.textContent = '♥';
+      }
+    });
+
+    // Favoritar com persistência
     document.querySelectorAll('.btn-favoritar').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         btn.classList.toggle('favoritado');
-        btn.textContent = btn.classList.contains('favoritado') ? '♥' : '♡';
+        const isFav = btn.classList.contains('favoritado');
+        btn.textContent = isFav ? '♥' : '♡';
+
+        const card  = btn.closest('.animal-card');
+        const id    = card.dataset.id;
+        const chave = tipoAtual + '_' + id;
+        let lista   = getFavoritos();
+
+        if (isFav) {
+          if (!lista.find(f => f.chave === chave)) {
+            lista.push({
+              chave,
+              id,
+              nome:   card.querySelector('.animal-nome').textContent.trim(),
+              foto:   card.querySelector('.card-img img').getAttribute('src'),
+              genero: card.querySelector('.animal-genero').textContent.trim(),
+              tipo:   tipoAtual
+            });
+          }
+        } else {
+          lista = lista.filter(f => f.chave !== chave);
+        }
+        setFavoritos(lista);
       });
     });
 
     // Navegar para página de detalhe
-    const isApadrinhar = document.body.classList.contains('page-apadrinhar');
-    const targetPage   = isApadrinhar ? 'apadrinhoanimal.html' : 'adocaoanimal.html';
+    const targetPage = isApadrinhar ? 'apadrinharanimal.html' : 'adocaoanimal.html';
 
     document.querySelectorAll('.animal-card').forEach(card => {
       card.querySelector('.btn-adotar').addEventListener('click', () => {
@@ -111,12 +160,111 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ─────────────────────────────────────────────────────
-     DETALHE DO ANIMAL (adocaoanimal.html)
+     FAVORITOS (favoritos.html)
+  ───────────────────────────────────────────────────── */
+
+  const favoritosGrid = document.getElementById('favoritos-grid');
+
+  if (favoritosGrid) {
+    const vazioEl     = document.getElementById('favoritos-vazio');
+    const searchInput = document.querySelector('.search-bar input');
+
+    function renderFavoritos() {
+      const lista = getFavoritos();
+      favoritosGrid.innerHTML = '';
+
+      if (lista.length === 0) {
+        vazioEl.style.display   = 'flex';
+        favoritosGrid.style.display = 'none';
+        return;
+      }
+
+      vazioEl.style.display       = 'none';
+      favoritosGrid.style.display = 'grid';
+
+      lista.forEach(animal => {
+        const card    = document.createElement('div');
+        card.className    = 'animal-card';
+        card.dataset.id   = animal.id;
+        card.dataset.chave = animal.chave;
+        const btnLabel = animal.tipo === 'apadrinhar' ? 'Apadrinhar!' : 'Quero adotar!';
+
+        card.innerHTML = `
+          <div class="card-img">
+            <img src="${animal.foto}" alt="${animal.nome}">
+            <button class="btn-favoritar favoritado" aria-label="Desfavoritar">&#9829;</button>
+          </div>
+          <div class="animal-rodape">
+            <span class="animal-nome">${animal.nome}</span>
+            <span class="animal-genero">
+              <img src="imagens/Heart with dog paw.png" alt=""> ${animal.genero}
+            </span>
+          </div>
+          <button class="btn-adotar">${btnLabel}</button>
+        `;
+
+        card.querySelector('.btn-favoritar').addEventListener('click', function () {
+          let l = getFavoritos();
+          l = l.filter(f => f.chave !== animal.chave);
+          setFavoritos(l);
+
+          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          card.style.opacity    = '0';
+          card.style.transform  = 'scale(0.9)';
+          setTimeout(() => {
+            card.remove();
+            if (favoritosGrid.querySelectorAll('.animal-card').length === 0) {
+              vazioEl.style.display       = 'flex';
+              favoritosGrid.style.display = 'none';
+            }
+          }, 300);
+        });
+
+        card.querySelector('.btn-adotar').addEventListener('click', () => {
+          const pagina = animal.tipo === 'apadrinhar' ? 'apadrinharanimal.html' : 'adocaoanimal.html';
+          window.location.href = pagina + '?id=' + animal.id;
+        });
+
+        favoritosGrid.appendChild(card);
+      });
+    }
+
+    renderFavoritos();
+
+    // Filtro tags (visual)
+    document.querySelectorAll('.tag').forEach(tag => {
+      tag.addEventListener('click', () => tag.classList.toggle('ativo'));
+    });
+    const btnLimparFav = document.querySelector('.btn-limpar');
+    if (btnLimparFav) {
+      btnLimparFav.addEventListener('click', () => {
+        document.querySelectorAll('.tag').forEach(t => t.classList.remove('ativo'));
+        document.querySelectorAll('.checkboxes input').forEach(cb => cb.checked = false);
+      });
+    }
+
+    // Busca por nome
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        const q = this.value.toLowerCase().trim();
+        favoritosGrid.querySelectorAll('.animal-card').forEach(card => {
+          const nome = card.querySelector('.animal-nome').textContent.toLowerCase();
+          card.style.display = nome.includes(q) ? '' : 'none';
+        });
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────
+     DETALHE DO ANIMAL (adocaoanimal.html / apadrinharanimal.html)
   ───────────────────────────────────────────────────── */
 
   const fotoPrincipal = document.getElementById('foto-principal');
 
   if (fotoPrincipal) {
+    const isApadrinharAnimal = document.body.classList.contains('page-apadrinharanimal');
+    const detalheTargetPage  = isApadrinharAnimal ? 'apadrinharanimal.html' : 'adocaoanimal.html';
+    const detalheBtnLabel    = isApadrinharAnimal ? 'Apadrinhar!' : 'Quero adotar!';
     const animais = {
       zezinho: {
         nome: 'Zézinho',
@@ -214,14 +362,14 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="imagens/Heart with dog paw.png" alt=""> ${a.genero}
           </span>
         </div>
-        <button class="btn-adotar">Quero adotar!</button>
+        <button class="btn-adotar">${detalheBtnLabel}</button>
       `;
       card.querySelector('.btn-favoritar').addEventListener('click', function () {
         this.classList.toggle('favoritado');
         this.textContent = this.classList.contains('favoritado') ? '♥' : '♡';
       });
       card.querySelector('.btn-adotar').addEventListener('click', () => {
-        window.location.href = 'adocaoanimal.html?id=' + key;
+        window.location.href = detalheTargetPage + '?id=' + key;
       });
       vejaGrid.appendChild(card);
     });

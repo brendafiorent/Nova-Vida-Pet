@@ -105,7 +105,8 @@ body {
   background: linear-gradient(to right, #f06292 65%, #f9b8cf);
 }
 
-.page-adocaoanimal .header {
+.page-adocaoanimal .header,
+.page-apadrinharanimal .header {
   background: linear-gradient(to right, #f06292 65%, #F6B347);
 }
 
@@ -1619,6 +1620,77 @@ body {
   .parceiros-frase {
     font-size: 24px;
   }
+}
+
+/* ═══════════════════════════════════════════════════════
+   PÁGINA: FAVORITOS (favoritos.html)
+═══════════════════════════════════════════════════════ */
+
+.page-favoritos .header {
+  background: linear-gradient(to right, #f06292 65%, #f9b8cf);
+}
+
+.favoritos-hero {
+  text-align: center;
+  padding: 60px 5% 30px;
+}
+
+.fav-icon-wrap {
+  width: 90px;
+  height: 90px;
+  background: #f06292;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  box-shadow: 0 4px 16px rgba(240, 98, 146, 0.35);
+}
+
+.fav-icon-wrap img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.favoritos-titulo {
+  font-family: 'Fredoka', cursive;
+  font-size: 72px;
+  font-weight: 700;
+  color: #1e4727;
+  margin-bottom: 0;
+}
+
+.fav-wave-divider {
+  line-height: 0;
+  height: 80px;
+}
+
+.fav-wave-divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.favoritos-vazio {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #bbb;
+  gap: 16px;
+  text-align: center;
+}
+
+.favoritos-vazio .vazio-icon {
+  font-size: 70px;
+  color: #f9b8cf;
+  line-height: 1;
 }
 
 /* ═══════════════════════════════════════════════════════
