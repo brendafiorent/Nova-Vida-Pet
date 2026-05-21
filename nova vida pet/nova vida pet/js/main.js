@@ -392,7 +392,38 @@ document.addEventListener('DOMContentLoaded', function () {
       card.addEventListener('click', () => {
         document.querySelectorAll('.valor-card').forEach(c => c.classList.remove('ativo'));
         card.classList.add('ativo');
+        window.location.href = 'pagamento.html?valor=' + card.dataset.valor;
       });
+    });
+
+    const btnDoareOutros = document.querySelector('.btn-doar-outros');
+    if (btnDoareOutros) {
+      btnDoareOutros.addEventListener('click', () => {
+        window.location.href = 'pagamento.html';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────
+     PAGAMENTO (pagamento.html)
+  ───────────────────────────────────────────────────── */
+
+  const valorInput = document.getElementById('valor-doacao');
+
+  if (valorInput) {
+    const params = new URLSearchParams(window.location.search);
+    const valor  = params.get('valor');
+
+    if (valor) {
+      const num = parseFloat(valor);
+      valorInput.value = 'R$ ' + num.toFixed(2).replace('.', ',');
+    }
+
+    valorInput.addEventListener('input', function () {
+      let raw = this.value.replace(/\D/g, '');
+      if (raw === '') { this.value = ''; return; }
+      const num = (parseInt(raw, 10) / 100).toFixed(2);
+      this.value = 'R$ ' + num.replace('.', ',');
     });
   }
 

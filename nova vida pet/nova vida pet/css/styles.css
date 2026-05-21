@@ -1514,6 +1514,301 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   PÁGINA: PAGAMENTO (pagamento.html)
+═══════════════════════════════════════════════════════ */
+
+.page-pagamento .header {
+  background: linear-gradient(to right, #F6B347, #9dd89f);
+}
+
+.pagamento-main {
+  padding: 40px 5% 70px;
+}
+
+.pagamento-layout {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagamento-lado-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagamento-btn-voltar {
+  display: inline-block;
+  font-size: 52px;
+  color: #1e4727;
+  text-decoration: none;
+  line-height: 1;
+  font-weight: 700;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.pagamento-btn-voltar:hover {
+  color: #F6B347;
+  transform: translateX(-4px);
+}
+
+.pagamento-logo-circulo {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.pagamento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pagamento-card {
+  background: white;
+  border-radius: 24px;
+  padding: 52px 48px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Card esquerdo ── */
+.doando-para {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.55;
+}
+
+.pag-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.valor-input-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.valor-input {
+  border: 2.5px solid #F6B347;
+  border-radius: 10px;
+  padding: 16px 24px;
+  font-family: 'Fredoka', cursive;
+  font-size: 36px;
+  color: #1e4727;
+  text-align: center;
+  width: 210px;
+  outline: none;
+  background: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.valor-input:focus {
+  border-color: #e8a030;
+  box-shadow: 0 0 0 3px rgba(246, 179, 71, 0.18);
+}
+
+.valor-input::placeholder {
+  color: #ccc;
+  font-size: 24px;
+}
+
+.dados-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+
+.pag-form-input {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+  background: white;
+}
+
+.pag-form-input:focus { border-color: #9dd89f; }
+
+.pag-form-input::placeholder { color: #bbb; }
+
+.pag-seguranca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.pag-seguranca svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* ── Card direito ── */
+.pag-titulo-pagamento {
+  font-family: 'Fredoka', cursive;
+  font-size: 36px;
+  color: #1e4727;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.metodos-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.metodo-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.metodo-item:last-child { border-bottom: none; }
+
+.metodo-item input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #F6B347;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.metodo-icon-wrap {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metodo-icon-wrap svg {
+  width: 30px;
+  height: 30px;
+}
+
+.metodo-nome {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.card-logos {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.card-badge {
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 800;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.3px;
+}
+
+.badge-visa { background: #1a1f71; color: white; }
+.badge-mc   { background: #eb001b; color: white; }
+.badge-elo  { background: #f0e000; color: #333; border: 1px solid #e0d000; }
+.badge-amex { background: #007bc1; color: white; }
+
+.pag-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 20px 0 16px;
+}
+
+.pag-termos {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.pag-termos a {
+  color: #1e4727;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pag-termos a:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .pagamento-main {
+    padding: 24px 4% 50px;
+  }
+
+  .pagamento-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 14px;
+  }
+
+  .pagamento-logo-circulo {
+    width: 260px;
+    height: 260px;
+  }
+
+  .pagamento-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .pagamento-card {
+    padding: 28px 22px;
+  }
+
+  .doando-para       { font-size: 18px; margin-bottom: 18px; }
+  .pag-label         { font-size: 16px; }
+  .valor-input       { font-size: 26px; width: 160px; padding: 12px 16px; }
+  .pag-form-input    { font-size: 15px; padding: 12px 14px; }
+  .pag-seguranca     { font-size: 12px; }
+  .pag-titulo-pagamento { font-size: 24px; }
+  .metodo-nome       { font-size: 16px; }
+  .metodo-item       { padding: 14px 0; }
+
+  .card-badge {
+    font-size: 8px;
+    height: 17px;
+    padding: 0 4px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
    PÁGINA: PARCEIROS (parceiros.html)
 ═══════════════════════════════════════════════════════ */
 
