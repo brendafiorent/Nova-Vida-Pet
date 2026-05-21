@@ -59,6 +59,22 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
   font-size: 28px;
+  padding: 6px 16px;
+  border-radius: 22px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Links brancos (headers rosas) ficam um pouco mais opacos no hover */
+.page-adocao .menu a:hover,
+.page-apadrinhar .menu a:hover,
+.page-adocaoanimal .menu a:hover,
+.page-apadrinharanimal .menu a:hover,
+.page-favoritos .menu a:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .header-btns {
@@ -108,6 +124,21 @@ body {
 .page-adocaoanimal .header,
 .page-apadrinharanimal .header {
   background: linear-gradient(to right, #f06292 65%, #F6B347);
+}
+
+/* Header rosa → texto branco */
+.page-adocao .menu a,
+.page-apadrinhar .menu a,
+.page-adocaoanimal .menu a,
+.page-apadrinharanimal .menu a,
+.page-favoritos .menu a {
+  color: white;
+}
+
+/* Footer rosa → texto branco */
+.footer-rosa .footer-menu h3,
+.footer-rosa .footer-links a {
+  color: white;
 }
 
 .page-doacao .header {
