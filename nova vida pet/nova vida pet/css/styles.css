@@ -1513,6 +1513,115 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   PÁGINA: PARCEIROS (parceiros.html)
+═══════════════════════════════════════════════════════ */
+
+.parceiros-section {
+  padding: 70px 5% 100px;
+}
+
+.parceiros-wrapper {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.parceiros-col {
+  flex: 0 0 46%;
+  max-width: 46%;
+}
+
+.patrocinadores-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.parceiros-col h2,
+.patrocinadores-col h2 {
+  font-family: 'Fredoka', cursive;
+  font-size: 52px;
+  color: #1e4727;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.page-parceiros .carousel-slide img {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-position: center top;
+}
+
+.parceiros-frase {
+  font-family: 'Nunito', sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 26px;
+}
+
+/* Grid de patrocinadores */
+.patrocinadores-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 480px));
+  gap: 20px;
+}
+
+.patrocinador-card {
+  background: white;
+  border-radius: 18px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patrocinador-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.patrocinador-card img {
+  max-width: 100%;
+  max-height: 65%;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .parceiros-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .parceiros-col,
+  .patrocinadores-col {
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .parceiros-section {
+    padding: 40px 4% 60px;
+  }
+
+  .parceiros-col h2,
+  .patrocinadores-col h2 {
+    font-size: 34px;
+  }
+
+  .parceiros-frase {
+    font-size: 24px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
    PÁGINA: QUEM SOMOS (quemsomos.html)
 ═══════════════════════════════════════════════════════ */
 
