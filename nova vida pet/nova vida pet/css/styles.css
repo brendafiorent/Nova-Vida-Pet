@@ -19,7 +19,7 @@ body {
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
   zoom: 0.8;
-  cursor: url('patinhas-cursor.png') 24 24, auto;
+  cursor: url('patinhas-cursor.png') 19 24, auto;
 }
 
 @media (max-width: 1279px) {
@@ -92,7 +92,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 15px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
 }
 
@@ -200,7 +200,7 @@ body {
   height: 48px;
   font-size: 28px;
   line-height: 1;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   color: #1e4727;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   transition: background 0.2s;
@@ -229,7 +229,7 @@ body {
   height: 12px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.55);
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: background 0.3s;
 }
 
@@ -635,7 +635,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
   color: #ccc;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -690,7 +690,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 18px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
 }
 
@@ -791,14 +791,14 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
 }
 
 .checkboxes input[type="checkbox"] {
   width: 20px;
   height: 20px;
   accent-color: #f06292;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   flex-shrink: 0;
 }
 
@@ -817,7 +817,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: #555;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: all 0.2s;
 }
 
@@ -847,7 +847,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
 }
 
@@ -862,7 +862,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
 }
 
@@ -928,7 +928,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
 }
 
@@ -1010,7 +1010,7 @@ body {
   border: none;
   font-size: 24px;
   color: #bbb;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   text-decoration: none;
   line-height: 1;
   transition: color 0.2s;
@@ -1085,7 +1085,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
   color: #ccc;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -1109,7 +1109,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 21px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
 }
 
@@ -1416,7 +1416,7 @@ body {
   font-size: 50px;
   font-weight: 700;
   color: #1e4727;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: all 0.25s ease;
   border: 2.5px solid transparent;
 }
@@ -1451,7 +1451,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 24px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: all 0.25s ease;
   box-shadow: 0 6px 20px rgba(246, 179, 71, 0.42);
   margin-bottom: 18px;
@@ -1718,7 +1718,7 @@ body {
   gap: 16px;
   padding: 20px 0;
   border-bottom: 1px solid #f0f0f0;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
 }
 
 .metodo-item:last-child { border-bottom: none; }
@@ -1727,7 +1727,7 @@ body {
   width: 20px;
   height: 20px;
   accent-color: #F6B347;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   flex-shrink: 0;
 }
 
@@ -2099,7 +2099,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 26px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
   margin-top: 10px;
 }
@@ -2209,14 +2209,14 @@ body {
   font-size: 20px;
   color: #555;
   margin-bottom: 20px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
 }
 
 .entrar-check input[type="checkbox"] {
   width: 22px;
   height: 22px;
   accent-color: #F6B347;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   flex-shrink: 0;
 }
 
@@ -2242,7 +2242,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 26px;
-  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
   transition: opacity 0.2s;
   margin-bottom: 28px;
 }
