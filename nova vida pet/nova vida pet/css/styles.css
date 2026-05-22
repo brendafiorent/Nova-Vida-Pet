@@ -2470,6 +2470,17 @@ body {
 
 .step-circle svg { width: 40px; height: 40px; fill: white; }
 
+.step-circle img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  .step-circle img { width: 26px; height: 26px; }
+}
+
 /* Form title */
 .form-titulo   { font-family: 'Fredoka', cursive; font-size: 48px; font-weight: 700; color: #1e4727; text-align: center; margin-bottom: 10px; }
 .form-subtitulo{ font-family: 'Nunito', sans-serif; font-size: 26px; color: #666; text-align: center; margin-bottom: 48px; }
@@ -2720,8 +2731,27 @@ body {
   .form-subtitulo { font-size: 18px; }
   .vistoria-pergunta { font-size: 24px; }
   .final-texto { font-size: 22px; }
-  .intro-card { padding: 36px 28px; }
+  .intro-card { padding: 36px 28px; max-width: 100%; }
   .intro-titulo { font-size: 46px; }
+
+  /* Stepper: círculos menores para caber em telas pequenas */
+  .form-steps {
+    gap: 12px;
+    margin-bottom: 36px;
+    flex-wrap: nowrap;
+  }
+
+  .step-circle {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    flex-shrink: 0;
+  }
+
+  .step-circle svg {
+    width: 26px;
+    height: 26px;
+  }
   .intro-texto { font-size: 20px; }
   .questao-pergunta { font-size: 18px; }
   .opcao-btn { font-size: 16px; }
