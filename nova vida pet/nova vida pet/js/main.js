@@ -379,6 +379,14 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.toggle('favoritado');
       this.textContent = this.classList.contains('favoritado') ? '♥' : '♡';
     });
+
+    // Botão de ação principal (Apadrinhar! / Quero adotar!) → pagamento
+    const btnAcaoDetalhe = document.querySelector('.btn-adotar-detalhe');
+    if (btnAcaoDetalhe) {
+      btnAcaoDetalhe.addEventListener('click', () => {
+        window.location.href = 'pagamento.html';
+      });
+    }
   }
 
   /* ─────────────────────────────────────────────────────

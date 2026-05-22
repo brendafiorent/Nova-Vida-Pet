@@ -2021,6 +2021,272 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   PÁGINA: CADASTRAR (cadastrar.html)
+═══════════════════════════════════════════════════════ */
+
+.cadastrar-main {
+  padding: 50px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+}
+
+.cadastrar-card {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.11);
+  padding: 90px 96px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.cadastrar-header {
+  margin-bottom: 52px;
+}
+
+.cadastrar-titulo {
+  font-family: 'Fredoka', cursive;
+  font-size: 68px;
+  font-weight: 700;
+  color: #1e4727;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.cadastrar-subtitulo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  color: #555;
+}
+
+.cadastrar-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.cadastrar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cadastrar-input {
+  width: 100%;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 14px;
+  padding: 22px 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  color: #444;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.cadastrar-input:focus { background: #ebebeb; }
+.cadastrar-input::placeholder { color: #bbb; }
+
+.btn-criar-conta {
+  width: 100%;
+  background: #F6B347;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  padding: 22px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  transition: opacity 0.2s;
+  margin-top: 10px;
+}
+
+.btn-criar-conta:hover { opacity: 0.88; }
+
+@media (max-width: 768px) {
+  .cadastrar-card {
+    padding: 40px 28px;
+  }
+
+  .cadastrar-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cadastrar-titulo { font-size: 36px; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   PÁGINA: ENTRAR (entrar.html)
+═══════════════════════════════════════════════════════ */
+
+.entrar-main {
+  padding: 40px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+}
+
+.entrar-card {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.13);
+  max-width: 1300px;
+  width: 100%;
+}
+
+/* Lado esquerdo — foto */
+.entrar-foto {
+  background-color: #F6B347;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Cellipse cx='35' cy='22' rx='10' ry='14' fill='rgba(255,255,255,0.18)'/%3E%3Cellipse cx='65' cy='22' rx='10' ry='14' fill='rgba(255,255,255,0.18)'/%3E%3Cellipse cx='14' cy='46' rx='8' ry='11' transform='rotate(-20,14,46)' fill='rgba(255,255,255,0.18)'/%3E%3Cellipse cx='86' cy='46' rx='8' ry='11' transform='rotate(20,86,46)' fill='rgba(255,255,255,0.18)'/%3E%3Cpath d='M50,86 C34,86 20,75 20,63 C20,53 27,46 36,46 C41,46 46,50 50,55 C54,50 59,46 64,46 C73,46 80,53 80,63 C80,75 66,86 50,86Z' fill='rgba(255,255,255,0.18)'/%3E%3C/svg%3E");
+  background-size: 90px 90px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 620px;
+}
+
+.entrar-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/* Lado direito — formulário */
+.entrar-form-side {
+  background: white;
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.entrar-titulo {
+  font-family: 'Fredoka', cursive;
+  font-size: 62px;
+  font-weight: 700;
+  color: #1e4727;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.entrar-subtitulo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.entrar-input {
+  width: 100%;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 14px;
+  padding: 20px 22px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  color: #444;
+  outline: none;
+  margin-bottom: 18px;
+  transition: background 0.2s;
+}
+
+.entrar-input:focus { background: #ebebeb; }
+.entrar-input::placeholder { color: #bbb; }
+
+.entrar-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+  cursor: url('patinhas-cursor.png') 24 24, pointer;
+}
+
+.entrar-check input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #F6B347;
+  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  flex-shrink: 0;
+}
+
+.entrar-esqueci {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 26px;
+  transition: color 0.2s;
+}
+
+.entrar-esqueci:hover { color: #777; }
+
+.btn-entrar-form {
+  width: 100%;
+  background: #F6B347;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  padding: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  cursor: url('patinhas-cursor.png') 24 24, pointer;
+  transition: opacity 0.2s;
+  margin-bottom: 28px;
+}
+
+.btn-entrar-form:hover { opacity: 0.88; }
+
+.entrar-divisor {
+  border: none;
+  border-top: 1.5px solid #f0f0f0;
+  margin-bottom: 22px;
+}
+
+.entrar-cadastro {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  color: #888;
+}
+
+.entrar-cadastro a {
+  color: #F6B347;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.entrar-cadastro a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .entrar-card {
+    grid-template-columns: 1fr;
+  }
+
+  .entrar-foto {
+    min-height: 260px;
+  }
+
+  .entrar-form-side {
+    padding: 36px 28px;
+  }
+
+  .entrar-titulo { font-size: 34px; }
+}
+
+/* ═══════════════════════════════════════════════════════
    PÁGINA: QUEM SOMOS (quemsomos.html)
 ═══════════════════════════════════════════════════════ */
 
