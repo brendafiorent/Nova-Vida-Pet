@@ -2422,3 +2422,308 @@ body {
   .team-member h2 { font-size: 22px; }
   .team-member p  { font-size: 16px; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   FLUXO DE ADOÇÃO — FORMULÁRIOS
+═══════════════════════════════════════════════════════ */
+
+.form-main {
+  padding: 36px 5% 60px;
+  min-height: calc(100vh - 90px);
+  position: relative;
+}
+
+.form-voltar {
+  font-size: 52px;
+  font-weight: 700;
+  color: #1e4727;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 30px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.form-voltar:hover { color: #F6B347; transform: translateX(-6px); }
+
+/* Stepper */
+.form-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.step-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.step-inativo { background: #d5d5d5; }
+.step-ativo   { background: #F6B347; box-shadow: 0 6px 18px rgba(246,179,71,0.50); }
+
+.step-circle svg { width: 40px; height: 40px; fill: white; }
+
+/* Form title */
+.form-titulo   { font-family: 'Fredoka', cursive; font-size: 48px; font-weight: 700; color: #1e4727; text-align: center; margin-bottom: 10px; }
+.form-subtitulo{ font-family: 'Nunito', sans-serif; font-size: 26px; color: #666; text-align: center; margin-bottom: 48px; }
+
+/* Form 1 inputs */
+.form-grid-wrap { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; padding: 0 5%; }
+.form-row       { display: grid; gap: 20px; }
+.row-2-wide     { grid-template-columns: 2fr 1fr; }
+.row-3          { grid-template-columns: 1fr 1fr 1fr; }
+.row-2          { grid-template-columns: 2fr 1fr; }
+.row-3-addr     { grid-template-columns: 1.5fr 0.6fr 1.5fr; }
+
+.form-flow-input {
+  background: white;
+  border: 1.5px solid #ddd;
+  border-radius: 14px;
+  padding: 20px 24px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  color: #444;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-flow-input:focus { border-color: #F6B347; }
+.form-flow-input::placeholder { color: #bbb; }
+
+/* Continuar / Começar button */
+.form-continuar-wrap { display: flex; justify-content: center; margin-top: 52px; }
+
+.btn-form-continuar,
+.btn-form-comecar {
+  background: #F6B347;
+  color: white;
+  border: none;
+  border-radius: 34px;
+  padding: 18px 64px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-form-continuar:hover,
+.btn-form-comecar:hover { opacity: 0.88; }
+
+/* Question cards */
+.questoes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto 52px;
+}
+
+.questao-card {
+  background: white;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 22px;
+  padding: 36px 28px;
+}
+
+.questao-pergunta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e4727;
+  margin-bottom: 26px;
+  line-height: 1.45;
+}
+
+.opcoes-lista { display: flex; flex-direction: column; gap: 14px; }
+
+.opcao-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #efefef;
+  border: none;
+  border-radius: 34px;
+  padding: 14px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+  cursor: url('patinhas-cursor.png') 19 24, pointer;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.opcao-btn.selecionado  { background: #F6B347; color: white; }
+.opcao-btn:hover:not(.selecionado) { background: #e0e0e0; }
+
+.opcao-letra {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.opcao-btn.selecionado .opcao-letra { background: rgba(255,255,255,0.28); }
+
+/* Form 4 - vistoria (pergunta grande) */
+.vistoria-wrap { max-width: 880px; margin: 48px auto; text-align: center; }
+
+.vistoria-pergunta {
+  font-family: 'Fredoka', cursive;
+  font-size: 36px;
+  font-weight: 600;
+  color: #1e4727;
+  line-height: 1.55;
+  margin-bottom: 48px;
+}
+
+.vistoria-opcoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.vistoria-opcoes .opcao-btn { width: 360px; font-size: 22px; padding: 16px 24px; }
+
+/* Final page */
+.final-main {
+  padding: 40px 5% 60px;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.final-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.final-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 56px;
+}
+
+.final-check-circle {
+  width: 120px;
+  height: 120px;
+  background: #F6B347;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(246,179,71,0.45);
+  z-index: 1;
+}
+
+.final-check-circle svg { width: 64px; height: 64px; fill: white; }
+
+.estrela-final {
+  position: absolute;
+  font-size: 28px;
+  z-index: 0;
+}
+
+.final-texto {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e4727;
+  text-align: center;
+  max-width: 820px;
+  line-height: 1.75;
+  margin: 0 auto 52px;
+  white-space: normal;
+  word-break: normal;
+}
+
+/* Intro OBA page */
+.intro-main {
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+}
+
+.intro-main .form-voltar {
+  align-self: flex-start;
+}
+
+.intro-card {
+  background: white;
+  border-radius: 28px;
+  padding: 80px 96px;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.11);
+}
+
+.intro-titulo {
+  font-family: 'Fredoka', cursive;
+  font-size: 68px;
+  font-weight: 700;
+  color: #1e4727;
+  margin-bottom: 24px;
+}
+
+.intro-texto {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  color: #333;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.intro-tempo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #aaa;
+  margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .questoes-grid { grid-template-columns: 1fr; }
+  .row-2-wide, .row-2, .row-3, .row-3-addr { grid-template-columns: 1fr; }
+  .form-titulo { font-size: 30px; }
+  .form-subtitulo { font-size: 18px; }
+  .vistoria-pergunta { font-size: 24px; }
+  .final-texto { font-size: 22px; }
+  .intro-card { padding: 36px 28px; }
+  .intro-titulo { font-size: 46px; }
+  .intro-texto { font-size: 20px; }
+  .questao-pergunta { font-size: 18px; }
+  .opcao-btn { font-size: 16px; }
+  .vistoria-opcoes .opcao-btn { width: 100%; }
+}

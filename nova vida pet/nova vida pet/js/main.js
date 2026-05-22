@@ -380,11 +380,18 @@ document.addEventListener('DOMContentLoaded', function () {
       this.textContent = this.classList.contains('favoritado') ? '♥' : '♡';
     });
 
-    // Botão de ação principal (Apadrinhar! / Quero adotar!) → pagamento
+    // Botão de ação principal
     const btnAcaoDetalhe = document.querySelector('.btn-adotar-detalhe');
     if (btnAcaoDetalhe) {
       btnAcaoDetalhe.addEventListener('click', () => {
-        window.location.href = 'pagamento.html';
+        if (document.body.classList.contains('page-adocaoanimal')) {
+          const params  = new URLSearchParams(window.location.search);
+          const id      = params.get('id') || '';
+          const nome    = document.getElementById('animal-nome')?.textContent?.trim() || '';
+          window.location.href = 'adocao-intro.html?id=' + encodeURIComponent(id) + '&nome=' + encodeURIComponent(nome);
+        } else {
+          window.location.href = 'pagamento.html';
+        }
       });
     }
   }

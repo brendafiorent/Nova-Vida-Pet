@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nova Vida Pet — Formulário de Adoção</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="page-adocao-form1">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-area">
+      <a href="index.html"><img src="imagens/Logo nova vida pet deitada.png" alt="Logo Nova Vida Pet" class="logo"></a>
+    </div>
+    <nav class="menu">
+      <a href="adocao.html">Adoção</a>
+      <a href="doacao.html">Doação</a>
+      <a href="apadrinhar.html">Apadrinhar</a>
+      <a href="favoritos.html">Favoritos</a>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="quemsomos.html">Quem somos</a>
+    </nav>
+    <div class="header-btns">
+      <a href="entrar.html" class="btn-login">Entrar</a>
+      <a href="cadastrar.html" class="btn-cadastro">Cadastre-se</a>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="form-main">
+    <a href="adocao-intro.html" class="form-voltar">&#8592;</a>
+
+    <!-- STEPPER -->
+    <div class="form-steps">
+      <!-- Step 1: família (ATIVO) -->
+      <div class="step-circle step-ativo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+        </svg>
+      </div>
+      <!-- Step 2: pet/pata (INATIVO) -->
+      <div class="step-circle step-inativo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm5-1a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm5 0a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm5 1a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zM12 12c-3 0-9 1.5-9 4.5V19h18v-2.5C21 13.5 15 12 12 12z"/>
+        </svg>
+      </div>
+      <!-- Step 3: casa (INATIVO) -->
+      <div class="step-circle step-inativo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+      </div>
+      <!-- Step 4: check (INATIVO) -->
+      <div class="step-circle step-inativo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- TÍTULO -->
+    <h1 class="form-titulo">Precisamos saber mais sobre você!</h1>
+    <p class="form-subtitulo">Preencha as informações abaixo</p>
+
+    <!-- FORMULÁRIO -->
+    <form class="form-grid-wrap" onsubmit="return false;">
+
+      <!-- Row 1: Nome + CPF -->
+      <div class="form-row row-2-wide">
+        <input type="text" class="form-flow-input" placeholder="Nome completo *" required />
+        <input type="text" class="form-flow-input" placeholder="CPF *" required />
+      </div>
+
+      <!-- Row 2: Nascimento + E-mail + Celular -->
+      <div class="form-row row-3">
+        <input type="text" class="form-flow-input" placeholder="Data de nascimento *" required />
+        <input type="email" class="form-flow-input" placeholder="E-mail *" required />
+        <input type="tel" class="form-flow-input" placeholder="Celular *" required />
+      </div>
+
+      <!-- Row 3: Endereço + Número -->
+      <div class="form-row row-2">
+        <input type="text" class="form-flow-input" placeholder="Endereço *" required />
+        <input type="text" class="form-flow-input" placeholder="Número *" required />
+      </div>
+
+      <!-- Row 4: Bairro + UF + Complemento -->
+      <div class="form-row row-3-addr">
+        <input type="text" class="form-flow-input" placeholder="Bairro *" required />
+        <input type="text" class="form-flow-input" placeholder="UF *" required maxlength="2" />
+        <input type="text" class="form-flow-input" placeholder="Complemento" />
+      </div>
+
+      <!-- BOTÃO CONTINUAR -->
+      <div class="form-continuar-wrap">
+        <a href="adocao-form2.html" class="btn-form-continuar">Continuar</a>
+      </div>
+
+    </form>
+  </main>
+
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
