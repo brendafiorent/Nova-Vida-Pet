@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (fotoPrincipal) {
     const isApadrinharAnimal = document.body.classList.contains('page-apadrinharanimal');
+    const tipoDetalhe        = isApadrinharAnimal ? 'apadrinhar' : 'adocao';
     const detalheTargetPage  = isApadrinharAnimal ? 'apadrinharanimal.html' : 'adocaoanimal.html';
     const detalheBtnLabel    = isApadrinharAnimal ? 'Apadrinhar!' : 'Quero adotar!';
     const animais = {
@@ -364,9 +365,25 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <button class="btn-adotar">${detalheBtnLabel}</button>
       `;
-      card.querySelector('.btn-favoritar').addEventListener('click', function () {
+      const chaveVeja  = tipoDetalhe + '_' + key;
+      const btnFavVeja = card.querySelector('.btn-favoritar');
+      if (getFavoritos().find(f => f.chave === chaveVeja)) {
+        btnFavVeja.classList.add('favoritado');
+        btnFavVeja.innerHTML = '&#9829;';
+      }
+      btnFavVeja.addEventListener('click', function () {
         this.classList.toggle('favoritado');
-        this.textContent = this.classList.contains('favoritado') ? '♥' : '♡';
+        const isFav = this.classList.contains('favoritado');
+        this.textContent = isFav ? '♥' : '♡';
+        let lista = getFavoritos();
+        if (isFav) {
+          if (!lista.find(f => f.chave === chaveVeja)) {
+            lista.push({ chave: chaveVeja, id: key, nome: a.nome, foto: a.foto, genero: a.genero, tipo: tipoDetalhe });
+          }
+        } else {
+          lista = lista.filter(f => f.chave !== chaveVeja);
+        }
+        setFavoritos(lista);
       });
       card.querySelector('.btn-adotar').addEventListener('click', () => {
         window.location.href = detalheTargetPage + '?id=' + key;
@@ -375,9 +392,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Botão favoritar principal
-    document.getElementById('btn-favoritar').addEventListener('click', function () {
+    const chaveDetalhe = tipoDetalhe + '_' + id;
+    const btnFavMain   = document.getElementById('btn-favoritar');
+
+    if (getFavoritos().find(f => f.chave === chaveDetalhe)) {
+      btnFavMain.classList.add('favoritado');
+      btnFavMain.textContent = '♥';
+    }
+
+    btnFavMain.addEventListener('click', function () {
       this.classList.toggle('favoritado');
-      this.textContent = this.classList.contains('favoritado') ? '♥' : '♡';
+      const isFav = this.classList.contains('favoritado');
+      this.textContent = isFav ? '♥' : '♡';
+      let lista = getFavoritos();
+      if (isFav) {
+        if (!lista.find(f => f.chave === chaveDetalhe)) {
+          lista.push({ chave: chaveDetalhe, id, nome: animal.nome, foto: animal.foto, genero: animal.genero, tipo: tipoDetalhe });
+        }
+      } else {
+        lista = lista.filter(f => f.chave !== chaveDetalhe);
+      }
+      setFavoritos(lista);
     });
 
     // Botão de ação principal

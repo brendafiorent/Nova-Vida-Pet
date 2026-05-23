@@ -2493,6 +2493,22 @@ body {
   margin: 0;
 }
 
+.member-instagram {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #c13584;
+  text-decoration: none;
+  margin-top: 6px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.member-instagram:hover {
+  color: #833ab4;
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
