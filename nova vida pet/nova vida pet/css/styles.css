@@ -1,12 +1,6 @@
-/* ═══════════════════════════════════════════════════════
-   NOVA VIDA PET — Folha de estilos unificada
-   Páginas: index · adocao · adocaoanimal · doacao
-            apadrinhar · quemsomos
-═══════════════════════════════════════════════════════ */
 
-/* ─────────────────────────────────────────────────────
-   RESET & BODY
-───────────────────────────────────────────────────── */
+
+
 
 * {
   margin: 0;
@@ -28,9 +22,7 @@ body {
   }
 }
 
-/* ─────────────────────────────────────────────────────
-   HEADER — base (laranja)
-───────────────────────────────────────────────────── */
+
 
 .header {
   width: 100%;
@@ -69,7 +61,7 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Links brancos (headers rosas) ficam um pouco mais opacos no hover */
+
 .page-adocao .menu a:hover,
 .page-apadrinhar .menu a:hover,
 .page-adocaoanimal .menu a:hover,
@@ -113,9 +105,7 @@ body {
   font-size: 25px;
 }
 
-/* ─────────────────────────────────────────────────────
-   HEADER — sobrescritas por página
-───────────────────────────────────────────────────── */
+
 
 .page-adocao .header,
 .page-apadrinhar .header {
@@ -127,7 +117,7 @@ body {
   background: linear-gradient(to right, #f06292 65%, #F6B347);
 }
 
-/* Header rosa → texto branco */
+
 .page-adocao .menu a,
 .page-apadrinhar .menu a,
 .page-adocaoanimal .menu a,
@@ -136,7 +126,7 @@ body {
   color: white;
 }
 
-/* Footer rosa → texto branco */
+
 .footer-rosa .footer-menu h3,
 .footer-rosa .footer-links a {
   color: white;
@@ -146,9 +136,7 @@ body {
   background: linear-gradient(to right, #F6B347, #9dd89f);
 }
 
-/* ─────────────────────────────────────────────────────
-   HERO & CARROSSEL (index.html)
-───────────────────────────────────────────────────── */
+
 
 .hero {
   padding: 50px 5%;
@@ -237,9 +225,7 @@ body {
   background: white;
 }
 
-/* ─────────────────────────────────────────────────────
-   COMO FUNCIONA (index.html)
-───────────────────────────────────────────────────── */
+
 
 .como-funciona {
   padding: 90px 5%;
@@ -314,9 +300,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* ─────────────────────────────────────────────────────
-   DEPOIMENTOS (index.html)
-───────────────────────────────────────────────────── */
+
 
 .depoimentos {
   padding: 90px 5%;
@@ -375,9 +359,7 @@ body {
   line-height: 1.6;
 }
 
-/* ─────────────────────────────────────────────────────
-   FOOTER — base
-───────────────────────────────────────────────────── */
+
 
 .footer {
   background: #F6B347;
@@ -418,7 +400,7 @@ body {
 
 .footer-copy a:hover { opacity: 0.75; }
 
-/* Footer laranja (index, parceiros, quemsomos) — texto escuro */
+
 .page-index    .footer-copy p,
 .page-parceiros .footer-copy p,
 .page-quemsomos .footer-copy p {
@@ -482,16 +464,14 @@ body {
   font-size: 24px;
 }
 
-/* ─────────────────────────────────────────────────────
-   RESPONSIVIDADE BASE
-───────────────────────────────────────────────────── */
+
 
 @media (max-width: 768px) {
   body {
     zoom: 1;
   }
 
-  /* Header */
+  
   .header {
     flex-direction: column;
     align-items: center;
@@ -528,7 +508,7 @@ body {
     text-align: center;
   }
 
-  /* Hero */
+  
   .hero {
     padding: 16px 4%;
   }
@@ -555,7 +535,7 @@ body {
     height: 9px;
   }
 
-  /* Como funciona */
+  
   .como-funciona {
     padding: 30px 5%;
   }
@@ -577,7 +557,7 @@ body {
     font-size: 15px;
   }
 
-  /* Depoimentos */
+  
   .depoimentos {
     padding: 36px 5%;
   }
@@ -593,7 +573,7 @@ body {
     gap: 16px;
   }
 
-  /* Footer */
+  
   .footer {
     flex-direction: column;
     align-items: center;
@@ -628,10 +608,7 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   COMPONENTES COMPARTILHADOS — Cards de animal
-   (usados em adocao, apadrinhar e adocaoanimal)
-═══════════════════════════════════════════════════════ */
+
 
 .animal-card {
   background: white;
@@ -760,9 +737,7 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: ADOÇÃO & APADRINHAR
-═══════════════════════════════════════════════════════ */
+
 
 .adocao-main {
   display: flex;
@@ -771,7 +746,7 @@ body {
   align-items: flex-start;
 }
 
-/* Filtros */
+
 .filtros {
   background: white;
   border-radius: 22px;
@@ -907,13 +882,13 @@ body {
 
 .btn-limpar:hover { opacity: 0.85; }
 
-/* Área de animais */
+
 .adocao-content {
   flex: 1;
   min-width: 0;
 }
 
-/* Search */
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -944,7 +919,7 @@ body {
   color: #bbb;
 }
 
-/* Grid de animais */
+
 .animais-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -952,7 +927,7 @@ body {
   margin-bottom: 36px;
 }
 
-/* Ver mais */
+
 .ver-mais-wrapper {
   text-align: center;
   padding-bottom: 10px;
@@ -973,7 +948,7 @@ body {
 
 .btn-ver-mais:hover { opacity: 0.85; }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .adocao-main {
     flex-direction: column;
@@ -997,15 +972,13 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: DETALHE DO ANIMAL (adocaoanimal.html)
-═══════════════════════════════════════════════════════ */
+
 
 .animal-page {
   padding: 40px 5%;
 }
 
-/* Card detalhe */
+
 .detalhe-wrapper {
   background: white;
   border-radius: 24px;
@@ -1066,7 +1039,7 @@ body {
   margin-top: 8px;
 }
 
-/* Tags */
+
 .detalhe-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1082,7 +1055,7 @@ body {
   color: #555;
 }
 
-/* Me conheça */
+
 .conheca-bloco {
   display: flex;
   flex-direction: column;
@@ -1103,7 +1076,7 @@ body {
   line-height: 1.65;
 }
 
-/* Ações */
+
 .detalhe-acoes {
   display: flex;
   align-items: center;
@@ -1156,7 +1129,7 @@ body {
   opacity: 0.85;
 }
 
-/* Veja também */
+
 .veja-tambem {
   padding-bottom: 20px;
 }
@@ -1174,7 +1147,7 @@ body {
   gap: 18px;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .animal-page {
     padding: 20px 4%;
@@ -1218,9 +1191,7 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: DOAÇÃO (doacao.html)
-═══════════════════════════════════════════════════════ */
+
 
 .doacao-main {
   position: relative;
@@ -1228,7 +1199,7 @@ body {
   padding: 90px 5% 110px;
 }
 
-/* Blobs de fundo */
+
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -1261,7 +1232,7 @@ body {
   left: 32%;
 }
 
-/* Patas decorativas */
+
 .pata {
   position: absolute;
   pointer-events: none;
@@ -1277,7 +1248,7 @@ body {
 .pata-5 { width: 78px;  bottom: 7%;  right: 4%;   transform: rotate(-12deg); }
 .pata-6 { width: 50px;  top: 72%;    left: 42%;   transform: rotate(22deg);  }
 
-/* Pontinhos decorativos */
+
 .ponto {
   position: absolute;
   border-radius: 50%;
@@ -1292,7 +1263,7 @@ body {
 .ponto-4 { width: 12px; height: 12px; background: #F6B347; bottom: 18%; right: 16%; }
 .ponto-5 { width:  8px; height:  8px; background: #f06292; top: 65%;    left: 55%;  }
 
-/* Grid principal */
+
 .doacao-grid {
   position: relative;
   z-index: 1;
@@ -1302,7 +1273,7 @@ body {
   align-items: center;
 }
 
-/* Coluna esquerda — fotos */
+
 .fotos-col {
   display: flex;
   flex-direction: row;
@@ -1351,7 +1322,7 @@ body {
 .label-antes  { border-left: 4px solid #f06292; }
 .label-depois { border-left: 4px solid #4caf50; }
 
-/* Conector entre as fotos */
+
 .transformacao {
   display: flex;
   flex-direction: row;
@@ -1384,14 +1355,14 @@ body {
   50%       { transform: scale(1.22); opacity: 0.9; }
 }
 
-/* Coluna direita — conteúdo */
+
 .conteudo-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Badge */
+
 .badge-topo {
   display: inline-flex;
   align-items: center;
@@ -1417,7 +1388,7 @@ body {
   color: #1e4727;
 }
 
-/* Frase */
+
 .doacao-frase {
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
@@ -1427,7 +1398,7 @@ body {
   margin-bottom: 36px;
 }
 
-/* Label valores */
+
 .valores-titulo {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
@@ -1438,7 +1409,7 @@ body {
   margin-bottom: 16px;
 }
 
-/* Cards de valor */
+
 .valores-grid {
   display: flex;
   gap: 16px;
@@ -1477,7 +1448,7 @@ body {
   font-size: 28px;
 }
 
-/* Botão doar */
+
 .btn-doar-outros {
   display: inline-flex;
   align-items: center;
@@ -1508,7 +1479,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Grupo botão + segurança */
+
 .botao-grupo {
   display: flex;
   flex-direction: column;
@@ -1516,7 +1487,7 @@ body {
   gap: 14px;
 }
 
-/* Rodapé do botão */
+
 .seguro-info {
   display: flex;
   align-items: center;
@@ -1534,7 +1505,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Responsividade */
+
 @media (max-width: 920px) {
   .doacao-grid {
     grid-template-columns: 1fr;
@@ -1584,9 +1555,7 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: PAGAMENTO (pagamento.html)
-═══════════════════════════════════════════════════════ */
+
 
 .page-pagamento .header {
   background: linear-gradient(to right, #F6B347, #9dd89f);
@@ -1646,7 +1615,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ── Card esquerdo ── */
+
 .doando-para {
   font-family: 'Nunito', sans-serif;
   font-size: 26px;
@@ -1737,7 +1706,7 @@ body {
   flex-shrink: 0;
 }
 
-/* ── Card direito ── */
+
 .pag-titulo-pagamento {
   font-family: 'Fredoka', cursive;
   font-size: 36px;
@@ -1879,9 +1848,7 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: PARCEIROS (parceiros.html)
-═══════════════════════════════════════════════════════ */
+
 
 .parceiros-section {
   padding: 70px 5% 100px;
@@ -1928,7 +1895,7 @@ body {
   margin-top: 26px;
 }
 
-/* Grid de patrocinadores */
+
 .patrocinadores-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 480px));
@@ -1988,9 +1955,7 @@ body {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: FAVORITOS (favoritos.html)
-═══════════════════════════════════════════════════════ */
+
 
 .page-favoritos .header {
   background: linear-gradient(to right, #f06292 65%, #f9b8cf);
@@ -2059,9 +2024,7 @@ body {
   line-height: 1;
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: CADASTRAR (cadastrar.html)
-═══════════════════════════════════════════════════════ */
+
 
 .cadastrar-main {
   padding: 50px 5%;
@@ -2157,9 +2120,7 @@ body {
   .cadastrar-titulo { font-size: 36px; }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: ENTRAR (entrar.html)
-═══════════════════════════════════════════════════════ */
+
 
 .entrar-main {
   padding: 40px 5%;
@@ -2179,7 +2140,7 @@ body {
   width: 100%;
 }
 
-/* Lado esquerdo — foto */
+
 .entrar-foto {
   background-color: #F6B347;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Cellipse cx='35' cy='22' rx='10' ry='14' fill='rgba(255,255,255,0.18)'/%3E%3Cellipse cx='65' cy='22' rx='10' ry='14' fill='rgba(255,255,255,0.18)'/%3E%3Cellipse cx='14' cy='46' rx='8' ry='11' transform='rotate(-20,14,46)' fill='rgba(255,255,255,0.18)'/%3E%3Cellipse cx='86' cy='46' rx='8' ry='11' transform='rotate(20,86,46)' fill='rgba(255,255,255,0.18)'/%3E%3Cpath d='M50,86 C34,86 20,75 20,63 C20,53 27,46 36,46 C41,46 46,50 50,55 C54,50 59,46 64,46 C73,46 80,53 80,63 C80,75 66,86 50,86Z' fill='rgba(255,255,255,0.18)'/%3E%3C/svg%3E");
@@ -2198,7 +2159,7 @@ body {
   object-position: center bottom;
 }
 
-/* Lado direito — formulário */
+
 .entrar-form-side {
   background: white;
   padding: 80px 72px;
@@ -2325,9 +2286,7 @@ body {
   .entrar-titulo { font-size: 34px; }
 }
 
-/* ═══════════════════════════════════════════════════════
-   PÁGINA: QUEM SOMOS (quemsomos.html)
-═══════════════════════════════════════════════════════ */
+
 
 .quemsomos-section {
   padding: 80px 5% 100px;
@@ -2546,9 +2505,7 @@ body {
   .team-member p  { font-size: 16px; }
 }
 
-/* ═══════════════════════════════════════════════════════
-   FLUXO DE ADOÇÃO — FORMULÁRIOS
-═══════════════════════════════════════════════════════ */
+
 
 .form-main {
   padding: 36px 5% 60px;
@@ -2569,7 +2526,7 @@ body {
 
 .form-voltar:hover { color: #F6B347; transform: translateX(-6px); }
 
-/* Stepper */
+
 .form-steps {
   display: flex;
   justify-content: center;
@@ -2604,11 +2561,11 @@ body {
   .step-circle img { width: 26px; height: 26px; }
 }
 
-/* Form title */
+
 .form-titulo   { font-family: 'Fredoka', cursive; font-size: 48px; font-weight: 700; color: #1e4727; text-align: center; margin-bottom: 10px; }
 .form-subtitulo{ font-family: 'Nunito', sans-serif; font-size: 26px; color: #666; text-align: center; margin-bottom: 48px; }
 
-/* Form 1 inputs */
+
 .form-grid-wrap { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; padding: 0 5%; }
 .form-row       { display: grid; gap: 20px; }
 .row-2-wide     { grid-template-columns: 2fr 1fr; }
@@ -2632,7 +2589,7 @@ body {
 .form-flow-input:focus { border-color: #F6B347; }
 .form-flow-input::placeholder { color: #bbb; }
 
-/* Continuar / Começar button */
+
 .form-continuar-wrap { display: flex; justify-content: center; margin-top: 52px; }
 
 .btn-form-continuar,
@@ -2654,7 +2611,7 @@ body {
 .btn-form-continuar:hover,
 .btn-form-comecar:hover { opacity: 0.88; }
 
-/* Question cards */
+
 .questoes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2718,7 +2675,7 @@ body {
 
 .opcao-btn.selecionado .opcao-letra { background: rgba(255,255,255,0.28); }
 
-/* Form 4 - vistoria (pergunta grande) */
+
 .vistoria-wrap { max-width: 880px; margin: 48px auto; text-align: center; }
 
 .vistoria-pergunta {
@@ -2740,7 +2697,7 @@ body {
 
 .vistoria-opcoes .opcao-btn { width: 360px; font-size: 22px; padding: 16px 24px; }
 
-/* Final page */
+
 .final-main {
   padding: 40px 5% 60px;
   min-height: calc(100vh - 90px);
@@ -2802,7 +2759,7 @@ body {
   word-break: normal;
 }
 
-/* Intro OBA page */
+
 .intro-main {
   padding: 50px 5%;
   display: flex;
@@ -2857,7 +2814,7 @@ body {
   .intro-card { padding: 36px 28px; max-width: 100%; }
   .intro-titulo { font-size: 46px; }
 
-  /* Stepper: círculos menores para caber em telas pequenas */
+  
   .form-steps {
     gap: 12px;
     margin-bottom: 36px;

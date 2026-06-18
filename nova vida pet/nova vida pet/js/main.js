@@ -1,13 +1,8 @@
-/* ═══════════════════════════════════════════════════════
-   NOVA VIDA PET — Scripts unificados
-   Seções: Carrossel · Adoção/Apadrinhar · Detalhe Animal · Doação
-═══════════════════════════════════════════════════════ */
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ─────────────────────────────────────────────────────
-     CARROSSEL (index.html)
-  ───────────────────────────────────────────────────── */
+  
 
   const track = document.querySelector('.carousel-track');
 
@@ -16,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const dots = document.querySelectorAll('.dot');
     const total = originalSlides.length;
 
-    // Clona o primeiro e o último slide para criar o loop infinito
+    
     const firstClone = originalSlides[0].cloneNode(true);
     const lastClone  = originalSlides[total - 1].cloneNode(true);
     track.appendChild(firstClone);
     track.insertBefore(lastClone, originalSlides[0]);
-    // Track final: [clone-último | slide1 | slide2 | slide3 | clone-primeiro]
+    
 
     let current = 1;
     let timer;
@@ -61,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.carousel-btn.next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
     dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i + 1); resetAuto(); }));
 
-    // Swipe para mobile
+    
     let touchStartX = 0;
     track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend', e => {
@@ -72,9 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startAuto();
   }
 
-  /* ─────────────────────────────────────────────────────
-     HELPERS DE FAVORITOS (localStorage)
-  ───────────────────────────────────────────────────── */
+  
 
   function getFavoritos() {
     try { return JSON.parse(localStorage.getItem('nvp_favoritos') || '[]'); }
@@ -85,9 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('nvp_favoritos', JSON.stringify(lista));
   }
 
-  /* ─────────────────────────────────────────────────────
-     FILTROS & ANIMAIS (adocao.html / apadrinhar.html)
-  ───────────────────────────────────────────────────── */
+  
 
   const animaisGrid = document.querySelector('.animais-grid');
   const btnLimpar   = document.querySelector('.btn-limpar');
@@ -96,18 +87,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const isApadrinhar = document.body.classList.contains('page-apadrinhar');
     const tipoAtual    = isApadrinhar ? 'apadrinhar' : 'adocao';
 
-    // Toggle tags de filtro
+    
     document.querySelectorAll('.tag').forEach(tag => {
       tag.addEventListener('click', () => tag.classList.toggle('ativo'));
     });
 
-    // Limpar filtros
+    
     btnLimpar.addEventListener('click', () => {
       document.querySelectorAll('.tag').forEach(t => t.classList.remove('ativo'));
       document.querySelectorAll('.checkboxes input').forEach(cb => cb.checked = false);
     });
 
-    // Restaurar estado de favoritos salvo
+    
     const favSalvos = getFavoritos();
     document.querySelectorAll('.animal-card').forEach(card => {
       const chave = tipoAtual + '_' + card.dataset.id;
@@ -118,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Favoritar com persistência
+    
     document.querySelectorAll('.btn-favoritar').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -149,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Navegar para página de detalhe
+    
     const targetPage = isApadrinhar ? 'apadrinharanimal.html' : 'adocaoanimal.html';
 
     document.querySelectorAll('.animal-card').forEach(card => {
@@ -159,9 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ─────────────────────────────────────────────────────
-     FAVORITOS (favoritos.html)
-  ───────────────────────────────────────────────────── */
+  
 
   const favoritosGrid = document.getElementById('favoritos-grid');
 
@@ -231,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     renderFavoritos();
 
-    // Filtro tags (visual)
+    
     document.querySelectorAll('.tag').forEach(tag => {
       tag.addEventListener('click', () => tag.classList.toggle('ativo'));
     });
@@ -243,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Busca por nome
+    
     if (searchInput) {
       searchInput.addEventListener('input', function () {
         const q = this.value.toLowerCase().trim();
@@ -255,9 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* ─────────────────────────────────────────────────────
-     DETALHE DO ANIMAL (adocaoanimal.html / apadrinharanimal.html)
-  ───────────────────────────────────────────────────── */
+  
 
   const fotoPrincipal = document.getElementById('foto-principal');
 
@@ -329,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const id     = params.get('id') || 'zezinho';
     const animal = animais[id] || animais.zezinho;
 
-    // Preencher dados do animal principal
+    
     document.title = animal.nome + ' - Nova Vida Pet';
     fotoPrincipal.src = animal.foto;
     fotoPrincipal.alt = animal.nome;
@@ -344,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tagsContainer.appendChild(span);
     });
 
-    // Preencher "Veja também"
+    
     const vejaGrid = document.getElementById('veja-grid');
     const outros   = Object.entries(animais).filter(([key]) => key !== id).slice(0, 3);
 
@@ -391,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
       vejaGrid.appendChild(card);
     });
 
-    // Botão favoritar principal
+    
     const chaveDetalhe = tipoDetalhe + '_' + id;
     const btnFavMain   = document.getElementById('btn-favoritar');
 
@@ -415,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setFavoritos(lista);
     });
 
-    // Botão de ação principal
+    
     const btnAcaoDetalhe = document.querySelector('.btn-adotar-detalhe');
     if (btnAcaoDetalhe) {
       btnAcaoDetalhe.addEventListener('click', () => {
@@ -431,9 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* ─────────────────────────────────────────────────────
-     DOAÇÃO (doacao.html)
-  ───────────────────────────────────────────────────── */
+  
 
   const valoresGrid = document.querySelector('.valores-grid');
 
@@ -454,9 +439,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* ─────────────────────────────────────────────────────
-     PAGAMENTO (pagamento.html)
-  ───────────────────────────────────────────────────── */
+  
 
   const valorInput = document.getElementById('valor-doacao');
 
